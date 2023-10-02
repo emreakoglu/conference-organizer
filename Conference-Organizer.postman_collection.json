@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "328a5c45-8358-4bdc-bdf4-94744bdb542d",
+		"name": "Conference-Organizer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Conference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2023-09-30\",\r\n    \"name\": \"Test Yazılım Konferansı\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/conference-organizer/conference",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"conference-organizer",
+						"conference"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Presentation to Conference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"conferenceId\": 2,\r\n  \"presentations\": [\r\n    {\r\n      \"duration\": 60,\r\n      \"name\": \"Architecting Your Codebase\"\r\n    },\r\n    {\r\n      \"duration\": 45,\r\n      \"name\": \"Overdoing it in Python\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"Flavors of Concurrency in Java\"\r\n    },\r\n    {\r\n      \"duration\": 45,\r\n      \"name\":  \"Ruby Errors from Mismatched Gem Versions\"\r\n    },\r\n    {\r\n      \"duration\": 45,\r\n      \"name\":  \"JUnit 5 - Shaping the Future of Testing on the JVM\"\r\n    },\r\n    {\r\n      \"duration\": 60,\r\n      \"name\":  \"Cloud Native Java lightning\"\r\n    },\r\n    {\r\n      \"duration\": 60,\r\n      \"name\":  \"Communicating Over Distance\"\r\n    },\r\n    {\r\n      \"duration\": 45,\r\n      \"name\":  \"AWS Technical Essentials\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"Continuous Delivery\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"Monitoring Reactive Applications\"\r\n    },\r\n    {\r\n      \"duration\": 45,\r\n      \"name\":  \"Pair Programming vs Noise\"\r\n    },\r\n    {\r\n      \"duration\": 60,\r\n      \"name\":  \"Rails Magic\"\r\n    },\r\n    {\r\n      \"duration\": 60,\r\n      \"name\":  \"Microservices \\\"Just Right\\\"\"\r\n    },\r\n    {\r\n      \"duration\": 45,\r\n      \"name\":  \"Clojure Ate Scala (on my project)\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"Perfect Scalability\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"Apache Spark\"\r\n    },\r\n    {\r\n      \"duration\": 60,\r\n      \"name\":  \"Async Testing on JVM\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"A World Without HackerNews\"\r\n    },\r\n    {\r\n      \"duration\": 30,\r\n      \"name\":  \"User Interface CSS in Apps\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/conference-organizer/presentation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"conference-organizer",
+						"presentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Organize The Conference",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9292/conference-organizer/track?conferenceId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"conference-organizer",
+						"track"
+					],
+					"query": [
+						{
+							"key": "conferenceId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Existing Tracks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9292/conference-organizer/track/existing?conferenceId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"conference-organizer",
+						"track",
+						"existing"
+					],
+					"query": [
+						{
+							"key": "conferenceId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
